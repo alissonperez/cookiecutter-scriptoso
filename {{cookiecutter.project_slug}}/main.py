@@ -17,6 +17,7 @@ parser.add_argument("-v", "--verbose", help="Show more invo", action="store_true
 
 args = parser.parse_args()
 
+logging.basicConfig(level=logging.INFO)
 if args.verbose:
     logging.basicConfig(level=logging.DEBUG)
 

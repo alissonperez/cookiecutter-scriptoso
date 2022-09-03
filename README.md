@@ -1,4 +1,4 @@
 Cookiecutter - Scriptoso Python
 =============================================
 
-Testing
+Simple python script with logging and argparse.

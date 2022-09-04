@@ -1,6 +1,6 @@
 import logging.config
 
-import consolecolor as ccolor
+from {{cookiecutter.project_slug}} import consolecolor as ccolor
 
 
 fmt = '[%(levelname)s] %(name)s: %(message)s'

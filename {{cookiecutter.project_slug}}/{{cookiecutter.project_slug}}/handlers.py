@@ -1,7 +1,8 @@
 import logging
 
-import data
-import consolecolor as ccolor
+
+from {{cookiecutter.project_slug}} import (consolecolor as ccolor,
+                                           data)
 
 
 logger = logging.getLogger(__name__)

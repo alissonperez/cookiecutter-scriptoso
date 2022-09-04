@@ -4,9 +4,8 @@ import pprint
 
 from inspect import getmembers, isfunction
 
-import handlers
-import logger
-import consolecolor as ccolor
+from {{cookiecutter.project_slug}} import (handlers, logger,
+                                           consolecolor as ccolor)
 
 
 handlers_list = getmembers(handlers, isfunction)

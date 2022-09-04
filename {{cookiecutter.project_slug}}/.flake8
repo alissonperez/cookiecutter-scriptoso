@@ -1,0 +1,6 @@
+[flake8]
+
+# uncomment here to ignore some rule
+# ignore = E226,E302,E41
+
+max-line-length = 119

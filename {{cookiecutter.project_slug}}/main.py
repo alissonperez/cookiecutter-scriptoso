@@ -1,15 +1,12 @@
-import logging
 import argparse
-import pprint
 
 from inspect import getmembers, isfunction
 
-from {{cookiecutter.project_slug}} import (handlers, logger,
-                                           consolecolor as ccolor)
+from {{cookiecutter.project_slug}} import handlers, logger, consolecolor as ccolor
 
 
 handlers_list = getmembers(handlers, isfunction)
-handlers_by_name = {name.removeprefix('handler_'):func for name, func in handlers_list if name.startswith('handler_')}
+handlers_by_name = {name.removeprefix('handler_'): func for name, func in handlers_list if name.startswith('handler_')}
 
 docs = '\n'.join([' {}: {}'.format(ccolor.blue(ccolor.bold(name)), func.__doc__ or 'No docstrings filled...')
                   for name, func in handlers_by_name.items()])

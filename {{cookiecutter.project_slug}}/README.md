@@ -23,3 +23,9 @@ $ make clear
 ```
 $ pipenv run python main.py --help
 ```
+
+## How to lint
+
+```
+make lint
+```

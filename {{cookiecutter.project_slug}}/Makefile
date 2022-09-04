@@ -1,6 +1,9 @@
 
 install:
-	pipenv install
+	pipenv install -d
+
+lint:
+	pipenv run flake8 .
 
 # Setup app to run locally
 setup: install

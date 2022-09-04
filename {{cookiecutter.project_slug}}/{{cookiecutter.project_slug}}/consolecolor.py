@@ -18,29 +18,33 @@ enabled = True
 def grey(text):
     return _colorfy(GREY, text)
 
+
 def blue(text):
     return _colorfy(BLUE, text)
+
 
 def yellow(text):
     return _colorfy(YELLOW, text)
 
+
 def red(text):
     return _colorfy(RED, text)
 
+
 def bold(text):
     return _colorfy(BOLD, text)
+
 
 def bold_red(text):
     return _colorfy(BOLD, text)
 
+
 def underline(text):
     return _colorfy(UNDERLINE, text)
 
+
 def green(text):
     return _colorfy(GREEN, text)
-
-def bold(text):
-    return _colorfy(BOLD, text)
 
 
 def _colorfy(color, text):

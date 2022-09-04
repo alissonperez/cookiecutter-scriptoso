@@ -7,7 +7,7 @@ YELLOW = '\x1b[38;5;226m'
 RED = '\x1b[38;5;196m'
 BOLD_RED = '\x1b[31;1m'
 UNDERLINE = '\033[4m'
-OKGREEN = '\033[92m'
+GREEN = '\033[92m'
 BOLD = '\033[1m'
 RESET = '\x1b[0m'
 ENDC = '\033[0m'
@@ -30,11 +30,14 @@ def red(text):
 def bold(text):
     return _colorfy(BOLD, text)
 
+def bold_red(text):
+    return _colorfy(BOLD, text)
+
 def underline(text):
     return _colorfy(UNDERLINE, text)
 
-def okgreen(text):
-    return _colorfy(OKGREEN, text)
+def green(text):
+    return _colorfy(GREEN, text)
 
 def bold(text):
     return _colorfy(BOLD, text)

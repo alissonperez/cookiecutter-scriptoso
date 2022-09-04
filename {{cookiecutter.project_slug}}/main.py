@@ -12,10 +12,10 @@ import consolecolor as ccolor
 handlers_list = getmembers(handlers, isfunction)
 handlers_by_name = {name.removeprefix('handler_'):func for name, func in handlers_list if name.startswith('handler_')}
 
-docs = '\n'.join([' {}: {}'.format(ccolor.bold(name), func.__doc__ or 'No docstrings filled...')
+docs = '\n'.join([' {}: {}'.format(ccolor.blue(ccolor.bold(name)), func.__doc__ or 'No docstrings filled...')
                   for name, func in handlers_by_name.items()])
 
-project_name = ccolor.okgreen('{{ cookiecutter.project_name }}')
+project_name = ccolor.green('{{ cookiecutter.project_name }}')
 
 description = '\n'.join([
     f'Welcome to {project_name} script!',
@@ -38,7 +38,7 @@ args = parser.parse_args()
 if args.nocolors:
     ccolor.enabled = False
 
-logger.setup(colors=ccolor.enabled)
+logger.setup(ccolor.enabled, args.verbose)
 
 if __name__ == '__main__':
     handlers_by_name[args.handler](args.verbose, args.dryrun)

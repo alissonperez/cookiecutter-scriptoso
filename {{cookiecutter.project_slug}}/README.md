@@ -12,6 +12,12 @@
 $ make setup
 ```
 
+To clean up all app env (removing pipenv env, for example):
+
+```
+$ make clear
+```
+
 ## How to run
 
 ```

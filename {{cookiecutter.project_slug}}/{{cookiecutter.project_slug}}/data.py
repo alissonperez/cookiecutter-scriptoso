@@ -1,3 +1,4 @@
+import os
 import logging
 
 import requests
@@ -6,7 +7,7 @@ logger = logging.getLogger(__name__)
 
 
 def get_quotation(verbose, dryrun):
-    endpoint = 'http://economia.awesomeapi.com.br/json/last/USD-BRL'
+    endpoint = os.environ['QUOTATION_API_ENDPOINT']
     response = requests.get(endpoint)
 
     if response.status_code // 100 != 2:

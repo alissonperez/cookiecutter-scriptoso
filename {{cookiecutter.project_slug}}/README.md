@@ -20,6 +20,8 @@ $ make clear
 
 ## How to run
 
+Fill a `.env` based on `.env.example` and then:
+
 ```
 $ pipenv run python main.py --help
 ```

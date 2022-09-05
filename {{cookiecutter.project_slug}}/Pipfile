@@ -5,7 +5,9 @@ name = "pypi"
 
 [packages]
 requests = "*"
-python-dotenv = "*"
+python-dotenv = "*"{%- if cookiecutter.kafka|lower == 'y' %}
+kafka-python = "*"
+{%- endif %}
 
 [dev-packages]
 flake8 = "*"

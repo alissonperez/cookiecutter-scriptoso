@@ -14,7 +14,7 @@ remove_files = []
 
 
 if '{{ cookiecutter.kafka }}'.lower().strip() != 'y':
-    remove_files.append('kafkautil.py')
+    remove_files.append('{{cookiecutter.project_slug}}/kafka.py')
 
 
 for path in remove_files:

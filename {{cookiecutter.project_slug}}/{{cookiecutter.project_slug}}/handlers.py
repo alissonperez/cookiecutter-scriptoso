@@ -1,7 +1,9 @@
 import logging
 
 
-from {{cookiecutter.project_slug}} import consolecolor as ccolor, data
+from {{cookiecutter.project_slug}} import consolecolor as ccolor, data{%- if cookiecutter.kafka|lower == 'y' %}
+from {{cookiecutter.project_slug}} import kafka
+{%- endif %}
 
 
 logger = logging.getLogger(__name__)

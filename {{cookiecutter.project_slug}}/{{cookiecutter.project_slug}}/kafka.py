@@ -1,7 +1,11 @@
 import os
+import logging
 from contextlib import contextmanager
 
 from kafka import KafkaConsumer, KafkaProducer
+
+
+logger = logging.getLogger(__name__)
 
 
 def consume(topic):
@@ -42,11 +46,11 @@ def _on_send_error(excp):
 
 
 @contextmanager
-def createProducer():
+def createProducer(dryrun):
     '''
     Just:
-
-        with createProducer() as produce:
+        dryrun = True  # do not perform any operation when True
+        with createProducer(dryrun) as produce:
             produce('my-topic', 'my-key', 'my-value')
     '''
 
@@ -59,6 +63,10 @@ def createProducer():
                              sasl_plain_username=os.environ['KAFKA_SASL_PLAIN_USERNAME'])
 
     def _produce(topic, key, value):
+        if dryrun:
+            logger.debug(f'Dryrun mode, no message will be produced. Skipping...')
+            return
+
         producer.send(topic,
                       key=key.encode(),
                       value=value.encode()).add_callback(_on_send_success).add_errback(_on_send_error)

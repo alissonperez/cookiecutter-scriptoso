@@ -19,6 +19,7 @@ def consume(topic):
     # To consume latest messages and auto-commit offsets
     consumer = KafkaConsumer(topic,
                              client_id=os.environ['KAFKA_CLIENT_ID'],
+                             group_id=os.environ['KAFKA_GROUP_ID'],
                              bootstrap_servers=os.environ['KAFKA_BOOTSTRAP_SERVERS'].split(','),
                              # AUTH
                              sasl_mechanism=os.environ['KAFKA_SASL_MECHANISM'],

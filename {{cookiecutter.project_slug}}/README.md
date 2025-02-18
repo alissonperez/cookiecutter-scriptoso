@@ -3,8 +3,8 @@
 
 ## Requirements
 
-- Python 3.10.6 (in [`.python-version`](./.python-version)): Recommended to use [pyenv](https://github.com/pyenv/pyenv) to manage your python versions.
-- **Pipenv**: See how to install pipenv [here](https://pipenv.pypa.io/en/latest/#install-pipenv-today)
+- Python 3.13.0 (in [`.python-version`](./.python-version)): Recommended to use [pyenv](https://github.com/pyenv/pyenv) to manage your python versions.
+- **Poetry**: See how to install poetry [here](https://python-poetry.org/docs/#installing-with-pipx).
 
 ## How to setup
 

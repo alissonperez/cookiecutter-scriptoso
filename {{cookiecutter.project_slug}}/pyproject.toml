@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "{{ cookiecutter.project_slug }}"
+version = "0.1.0"
+description = ""
+authors = ["Alisson R. Perez <756802+alissonperez@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fire = "^0.7.0"
+python-dotenv = "^1.0.1"{%- if cookiecutter.kafka|lower == 'y' %}
+kafka-python = "^2.0.3"{%- endif %}
+requests = "^2.32.3"
+
+
+[tool.poetry.group.dev.dependencies]
+icecream = "^2.1.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

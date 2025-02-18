@@ -1,3 +1,4 @@
+import csv
 import os
 import logging
 
@@ -16,3 +17,9 @@ def get_quotation(verbose, dryrun):
     logger.debug(f'Endpoint "{endpoint}" answered with status code {response.status_code}')
 
     return response.json()
+
+
+def read_csv(filepath):
+    with open(filepath, 'r') as f:
+        reader = csv.DictReader(f)
+        return list(reader)

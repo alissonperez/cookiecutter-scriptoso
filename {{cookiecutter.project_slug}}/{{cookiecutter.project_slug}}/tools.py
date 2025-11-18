@@ -52,6 +52,9 @@ def handler(func):
         kwargs = _clean_kwargs(kwargs, keys_added)
         args = _clean_args(args, original_params)
 
+        if asyncio.iscoroutinefunction(func):
+            return asyncio.run(func(*args, **kwargs))
+
         return func(*args, **kwargs)
 
     wrapper.__signature__ = original_signature.replace(parameters=list(new_params.values()))

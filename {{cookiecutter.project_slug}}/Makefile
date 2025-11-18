@@ -3,7 +3,7 @@ install:
 	poetry install
 
 lint:
-	poetry run flake8 .
+	poetry run ruff check .
 
 # Setup app to run locally
 setup: install
